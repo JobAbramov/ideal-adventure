@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Input from "../../Controls/Input";
+import './Auth.css'
 
 export default () =>{
     const go = useNavigate()
@@ -48,16 +49,20 @@ export default () =>{
         
     }     
     return(
-        <div>
-        <h1>Авторизация</h1>
-            <div>
-                <Input type={'email'} id="1" placeholder="Введите email" label="Почта" onChange={event => onChangeHandler(event)}/> 
-                <Input type={'password'} id="2" placeholder="Введите email" label="Пароль" onChange={event => onChangeHandler(event)}/> 
-                
-                <p>{errorMsg(errorMessage)}</p>
+        <div className="authLayout">
+        
+           <div className="form">
+                <h1>Авторизация</h1>
+                <div>
+                    <Input type={'email'} id="1" placeholder="Введите email" label="Почта" onChange={event => onChangeHandler(event)}/> 
+                    <Input type={'password'} id="2" placeholder="Введите email" label="Пароль" onChange={event => onChangeHandler(event)}/> 
+                        
+                    <p>{errorMsg(errorMessage)}</p>
                     <button disabled={disabled_btn} onClick={event => authCheck(login,password)}>Принять</button>
-                    
+                            
+                </div>
             </div>
+            
         </div>
     )
 }
