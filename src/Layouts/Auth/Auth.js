@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Input from "../Controls/Input";
+import Input from "../../Controls/Input";
 
 export default () =>{
     const go = useNavigate()
